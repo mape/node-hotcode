@@ -1,0 +1,216 @@
+html {
+	background: data-url(/img/bg.png);
+	height: 100%;
+}
+body {
+	color: #000;
+	margin: 36px 0 0;
+	font: 12px tahoma, arial, sans-serif;
+	text-rendering: optimizeLegibility;
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	min-width: 750px;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+strong {
+	font-weight: bold;
+}
+#toolbar {
+	position: absolute;
+	top: -36px;
+	left: 0;
+	right: 0;
+	height: 36px;
+	background: data-url(/img/toolbar.png);
+	box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+}
+.inputs {
+	height: 23px;
+	position: absolute;
+	top: 4px;
+	left: 100px;
+	right: 300px;
+}
+.input {
+	border-top: 1px solid #bdbdbd;
+	border-left: 1px solid #b9bab9;
+	border-right: 1px solid #b4b4b4;
+	border-bottom: 1px solid #b1b1b1;
+	box-shadow: 0 1px 0 #e4e4e4, 1px 1px 0 #f2f2f2 inset;
+	background: #fff;
+	height: 27px;
+	border-radius: 4px;
+	font-size: 13px;
+	padding: 2px;
+	position: absolute;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.input .title {
+	background: #b5d5ff data-url(/img/path-icon.png) no-repeat 4px 3px;
+	border: 1px solid #9ec1ec;
+	border-radius: 3px;
+	display: inline-block;
+	height: 19px;
+	line-height: 19px;
+	padding: 0 4px 0 22px;
+	margin-right: 2px;
+} 
+.input input {
+	border: 0;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-right: -200px;
+	background: transparent;
+	width: 100%;
+	z-index: 100;
+}
+input {
+    border: none;
+    outline: none;
+}
+.input {
+	overflow: hidden;
+}
+.input.reload {
+	width: 49%;
+	left: 0;
+}
+.input.url {
+	width: 50%;
+	right: 0;
+}
+.button, .status {
+	width: 27px;
+	height: 27px;
+	position: absolute;
+	top: 4px;
+	cursor: pointer;
+}
+.stop {
+	background: data-url(/img/stop.png);
+	left: 6px;
+}
+.stop:active {
+	background: data-url(/img/stop-active.png);
+}
+.refresh {
+	background: data-url(/img/refresh.png);
+	left: 6px;
+}
+.refresh:active {
+	background: data-url(/img/refresh-active.png);
+}
+
+.status.socket {
+	background: data-url(/img/light-bad.png);
+	left: 36px;
+}
+.status.socket.on {
+	background: data-url(/img/light-good.png);
+	left: 36px;
+}
+.status.watching {
+	background: data-url(/img/light-bad.png);
+	left: 66px;
+}
+.status.watching.on {
+	background: data-url(/img/light-good.png);
+	left: 66px;
+}
+.history {
+	border-top: 1px solid #cdcdcd;
+	border-right: 1px solid #c4c4c4;
+	border-bottom: 1px solid #bcbbbc;
+	border-left: 1px solid #c4c4c4;
+	box-shadow: 0 1px 0 #dfe0df, 1px 1px 0 #f7f7f7 inset;
+	height: 27px;
+	border-radius: 4px;
+	font-size: 12px;
+	padding: 0 7px;
+	position: absolute;
+	top: 4px;
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.7);
+	right: 6px;
+	width: 290px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	white-space: nowrap;
+	text-align: right;
+}
+.path-container {
+	position: absolute;
+	top: 6px;
+	left: 7px;
+	right: 7px;
+	overflow: hidden;
+	height: 15px;
+}
+.path {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.path .time-since-change {
+	padding: 0 0 0 0;
+}
+#messages {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+.error, .message {
+	background: red data-url(/img/error-bar.png) repeat-x left bottom;
+	height: 36px;
+	line-height: 36px;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.7);
+	overflow: hidden;
+	cursor: pointer;
+}
+.message {
+	background: green data-url(/img/message-bar.png) repeat-x left bottom;
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		background: rgba(0,190,0,0);
+	}
+	25% {
+		background: rgba(0,190,0,0.3);
+	}
+	50% {
+		background: rgba(0,190,0,0);
+	}
+	75% {
+		background: rgba(0,190,0,0.3);
+	}
+	100% {
+		background: rgba(0,190,0,0);
+	}
+}
+#toolbar .history {
+	background: rgba(0,0,0,0);
+}
+#toolbar .history.new{
+	-webkit-animation: pulse 1s linear infinite;
+}

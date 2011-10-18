@@ -1,0 +1,25 @@
+{
+    "name": "hotcode",
+    "homepage": "http://github.com/mape/node-hotcode",
+    "author": {
+      "name": "Mathias Pettersson",
+      "url": "http://github.com/mape"
+    },
+    "engines" : ["node"],
+    "bin": { "hotcode" : "./server.js" },
+    "repository": { "type" : "git", "url" : "http://github.com/mape/node-hotcode.git" },
+    "description": "File monitor script for local development.",
+    "keywords": ["monitor", "development", "restart", "autoload", "reload", "terminal"],
+    "version": "0.0.1",
+    "preferGlobal" : "true",
+    "main": "./hotcode",
+    "dependencies" : {
+      "connect" : ">=1.7.1",
+      "connect-assetmanager" : ">=0.0.24",
+      "connect-assetmanager-handlers" : ">=0.0.17",
+      "ejs" : ">=0.4.3",
+      "express" : ">=2.4.7",
+      "socket.io" : ">=0.8.5",
+      "optimist" : ">=0.2.6"
+    }
+}
