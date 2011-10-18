@@ -206,7 +206,7 @@
 	var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
 	var attachEvent = window[eventMethod];
 	var messageEvent = eventMethod == 'attachEvent' ? 'onmessage' : 'message';
-	eventer(messageEvent,function(e) {
+	attachEvent(messageEvent,function(e) {
 		var data = JSON.parse(e.data);
 
 		if (data.type == 'url') {
