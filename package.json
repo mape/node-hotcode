@@ -10,7 +10,7 @@
     "repository": { "type" : "git", "url" : "http://github.com/mape/node-hotcode.git" },
     "description": "File monitor script for local development.",
     "keywords": ["monitor", "development", "restart", "autoload", "reload", "terminal"],
-    "version": "0.0.5",
+    "version": "0.0.6",
     "preferGlobal" : "true",
     "main": "./hotcode",
     "dependencies" : {

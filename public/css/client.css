@@ -4,13 +4,16 @@ html {
 }
 body {
 	color: #000;
-	margin: 36px 0 0;
 	font: 12px tahoma, arial, sans-serif;
 	text-rendering: optimizeLegibility;
-	position: relative;
 	height: 100%;
 	overflow: hidden;
 	min-width: 750px;
+}
+#container {
+	margin: 36px 0 0;
+	position: relative;
+	height: 100%;
 }
 a {
 	color: #000;
