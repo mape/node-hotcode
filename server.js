@@ -58,7 +58,7 @@ var assetsMiddleware = assetManager({
 		}
 	}
 	, 'js-inject': {
-		'route': /\/static\/injected.js/
+		'route': /\/static(\/[a-z0-9]+)?\/injected.js/
 		, 'path': __dirname+'/public/js/'
 		, 'dataType': 'javascript'
 		, 'files': [
