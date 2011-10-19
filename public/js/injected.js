@@ -18,6 +18,9 @@
 		} else if (data.type === 'content') {
 			window.location.reload(true);
 		}
+
+		// Acknowledge that we recieved the data.
+		window.top.postMessage(JSON.stringify({'type': 'ack'}), '*');
 	}, false);
 	
 	function handleRequest(request) {

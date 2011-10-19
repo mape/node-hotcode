@@ -15,11 +15,20 @@ This means you don't have to hit refresh every time you make a change and if the
 
 ## How to use
 * Run `hotcode` in terminal
+* Insert the "injected.js" script into your project as a script tag or through a http proxy. ___(semi optional)___
 * A browser window should now open up (it runs `open http://host:port`)
 * Insert url (`http://projectname.mydomain.com`) in "Url" input, press return. 
 * Insert path (`/var/www/projectname/`) in "Watch path" input, press return.
 * Start making changes to files in the path and see how hotcode reloads the view.
 * Be more productive.
+
+## "Required script"
+
+To get extra features like updating the url while browsing the site and in page CSS refresh you must include the "injected.js" script in your page. This can be done using a script tag or through a http proxy like [Glimmerblocker](http://glimmerblocker.org/).
+
+If the script isn't included cross origin policies negate the ability do these things.
+
+But hotcode will fallback to a "dumb" reload of the iframe on file change when the script isn't present.
 
 ## Args
 
@@ -45,10 +54,6 @@ At `~/.hotcode` you can insert:
     ];
 
 This makes it so that hotcode will insert the path `/var/www/subdomain` automatically when you insert an url matching the regex supplied.
-
-## Requirements
-
-Add http://yourhost:8080/static/injected.js as a script on your project page or through a http proxy like [Glimmerblocker](http://glimmerblocker.org/).
 
 ### Ordinary script tag
     <script src="http://yourhost:8080/static/injected.js" type="text/javascript"></script>

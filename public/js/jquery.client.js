@@ -199,8 +199,16 @@
 		});
 	}
 	
+	var fallbackTimeout;
 	function postToIframe(data) {
 		window.frames[0].postMessage(JSON.stringify(data), '*');
+		if (fallbackTimeout) {
+			clearTimeout(fallbackTimeout);
+		}
+		// If we don't get an acknowledgement back (ie the script isn't included) we reload the iframe.
+		fallbackTimeout = setTimeout(function() {
+			$('iframe').attr('src', $('iframe').attr('src'));
+		}, 50);
 	}
 
 	var eventMethod = window.addEventListener ? 'addEventListener' : 'attachEvent';
@@ -209,7 +217,9 @@
 	attachEvent(messageEvent,function(e) {
 		var data = JSON.parse(e.data);
 
-		if (data.type == 'url') {
+		if (data.type === 'ack') {
+			clearTimeout(fallbackTimeout);
+		} else if (data.type === 'url') {
 			$$('#url').val(data.url);
 			localStorage['url'] = data.url;
 		}
