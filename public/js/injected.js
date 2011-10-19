@@ -24,14 +24,13 @@
 		function addCacheBuster(currentHref, newHref) {
 			// If they don't match at all the site is most likely using a hash to bust caches.
 			if (!currentHref.match(new RegExp(newHref))) {
-				return newHref;
+				currentHref = newHref;
 			}
 
 			// If the path stays the same we append/update a cache buster GET variable.
 			if (currentHref.match(/cachebust/)) {
 				return currentHref.replace(/cachebust=[0-9]+/, 'cachebust='+new Date().getTime());
 			}
-
 			if (currentHref.indexOf('?') === -1) {
 				return currentHref+'?cachebust='+new Date().getTime();
 			} else {
