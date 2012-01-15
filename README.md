@@ -32,10 +32,11 @@ But hotcode will fallback to a "dumb" reload of the iframe on file change when t
 
 ## Args
 
-    hotcode -p 8000 -u vhost.local -s
+    hotcode -p 8000 -u vhost.local -d 0 -s
 
 * -p [int] , port, `8080`
 * -h [str] , host, `vhost.local`
+* -d [int] , refresh_delay, '0'
 * -s, silent, doesn't open a browser window on start
 
 # Helper file (predefined paths for urls)
