@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 process.title = 'hotcode';
 
-var argv = require('optimist').usage('Usage: $0 -p [num] -h [host.local] -s').argv;
+var argv = require('optimist').usage('Usage: $0 -p [num] -h [host.local] -d [refresh_delay] -s')
+	.default('d', 0)
+	.argv;
 
 process.addListener('uncaughtException', function (err, stack) {
 	console.log('Caught exception: '+err+'\n'+err.stack);
@@ -28,6 +30,7 @@ console.log('Inject js: '+host+'/static/injected.js');
 
 var app = module.exports = express.createServer();
 app.listen(port, null);
+app.delay = argv.d;
 
 // Setup socket.io server
 var socketIo = new require('./lib/socket-io-server.js')(app);
